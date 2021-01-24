@@ -1,0 +1,36 @@
+body {
+	margin: 0;
+	font-family: sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.rating-box {
+	background-color: #ddd;
+	max-width: 600px;
+	margin: 40px auto;
+	padding: 50px;
+	display: flex;
+	flex-direction: column;
+}
+
+.rating-box h1 {
+	margin: 0 0 30px;
+	font-size: 40px;
+}
+
+.rating-box .ratings .fa {
+	font-size: 40px;
+	color: #FF9800;
+	cursor: pointer;
+	float: left;
+}
+
+.rating-box input {
+		margin-top: 20px;
+		font-size: 30px;
+		padding: 6px 12px;
+		background-color: #bbb;	
+}

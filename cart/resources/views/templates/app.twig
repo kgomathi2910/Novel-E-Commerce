@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<style>
+		.overlay
+		{
+			display: block;
+			opacity: 0;
+			position: absolute;
+			top: 10%;
+			margin-left: 0;
+			width: 70px;
+		}
+		.product-top:hover .overlay
+		{
+			opacity: 1;
+			margin-left: 5%;
+			transition: 0.5s;
+		}
+		.overlay .fa
+		{
+			cursor: pointer;
+			background-color: #fff;
+			color: #000;
+			height: 35px;
+			width: 35px;
+			font-size: 20px;
+			padding: 7px;
+			margin: 5%;
+			margin-bottom: 5%;
+		}
+		.overlay .btn-secondary
+		{
+			background: transparent;
+			border: none !important;
+			box-shadow: none !important;
+		}
+	</style>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">		
+		<style>
+			body {
+				padding-bottom : 60px;
+			}
+		</style>
+		<title>Document</title>
+	</head>
+	<body>
+		{% include 'templates/partials/navigation.twig' %}
+		<div class="container">
+			{% block content %}{% endblock %}
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		{% block scripts %}{% endblock %}
+	</body>
+</html>

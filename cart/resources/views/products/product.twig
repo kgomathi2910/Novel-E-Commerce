@@ -1,0 +1,32 @@
+{% extends 'templates/app.twig' %}
+{% block content %}
+	<div class="row">
+		<div class="col-md-4">
+			<div class="product-top">
+						<img src="{{ product.image }}" alt="{{ product.title }} image" class="thumbnail img-responsive">
+						<div class="overlay">
+								<a href="{{path_for('cart.add', { slug: product.slug, quantity: 1 })}}">
+								<button type="button" class="btn btn-secondary" title="Add to Cart">
+									<i class="fa fa-shopping-cart"></i>
+								</button>
+								</a>
+						</div>
+			</div>
+		</div>
+		<div class="col-md-8">
+			
+			{% if product.outOfStock() %}
+				<span class="label label-danger">Out Of Stock</span>
+			{% elseif product.hasLowStock() %}
+				<span class="label label-warning">Low Stock</span>
+			{% else %}
+					<span class="label label-success">In Stock</span>
+			{% endif %}
+			<h3>{{ product.title }}</h3>
+			<p>{{ product.description }}</p>
+			{% if product.inStock() %}
+				<a href="{{path_for('cart.add', { slug: product.slug, quantity: 1 })}}" class="btn btn-default btn-sm">Add to cart</a>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}
